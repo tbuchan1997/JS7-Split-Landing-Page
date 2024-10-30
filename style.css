@@ -7,6 +7,7 @@
   --right-btn-hover-colour: rgba(28, 122, 28, 1);
   --hover-width: 75%;
   --other-width: 25%;
+  --speed: 1000ms;
 }
 
 * {
@@ -102,6 +103,13 @@ h1 {
   background-color: var(--right-bg-colour);
 }
 
+.split.right, 
+.split.left, 
+.split.right::before, 
+.split.left::before {
+  transition: var(--speed) ease-in-out;
+}
+
 .hover-left .left {
   width: var(--hover-width);
 }
@@ -116,4 +124,17 @@ h1 {
 
 .hover-right .right {
   width: var(--hover-width);
+}
+
+@media(max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+
 }
